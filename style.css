@@ -1,0 +1,95 @@
+/*GENERAL*/
+html {
+    background-color: black;
+}
+
+/*NOTES*/
+#a-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.a {
+    padding: 5px;
+    border: 2px solid black;
+    width: 25px;
+    height: 25px;
+}
+
+.b {
+    background-color: rgb(160, 231, 250);
+}
+.g {
+    background-color: rgb(180, 248, 200);
+}
+.r {
+    background-color: rgb(255, 174, 188);
+}
+.y {
+    background-color: rgb(251, 231, 198);
+}
+
+/***HEADER***/
+header {
+    background-color: rgb(255, 174, 188);
+    font-family: 'Amatic SC';
+    margin: 0em 1.5em;
+    padding: 0.5em;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+h3 {
+    font-size: 1.5em;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    font-style: italic;
+}
+
+/***SCHEME***/
+#scheme {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0em 1.5em 2em 1.5em;
+    padding: 1em;
+    color: black;
+    background-color: rgb(180, 248, 200);
+    font-family: 'Amatic SC';
+}
+
+/*CONTROLS*/
+#controls {
+    display: flex;
+    flex-flow: row wrap;
+}
+button {
+    font-family: 'Amatic SC';
+    width: 40px;
+}
+button:hover {
+    cursor: pointer;
+}
+
+/*LOG*/
+#log {
+    display: flex;
+    flex-flow: row wrap;
+}

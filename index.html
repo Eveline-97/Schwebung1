@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Schwebung by Eveline Vervliet, 2022">
+    <title>Schwebung</title>
+
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/tone@14.8.35/build/Tone.js"></script>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Schwebung</h1>
+        <h3>by <a href="https://evelinevervliet.com" target="_blank" rel="noopener noreferrer">Eveline Vervliet</a><br>2022</h3>
+    </header>
+    <div id="scheme">
+        <div id="controls">
+            <button id="start">start</button>
+            <input class="slider" id="speed" type="range" min="50" max="500" value="250">
+            <p id="speed-amount">250ms between notes</p>
+        </div>
+
+        <div id="log">
+            <p id="current-note">Current note: 0</p>
+            <p>&nbsp;//&nbsp;</p>
+            <p id="repeats">Repeats: 0</p>
+        </div>
+    </div>
+
+    <div id="a-container">
+        <div id="row-1" class="row">
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+        </div>
+        <div id="row-2" class="row">
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+        </div>
+        <div id="row-3" class="row">
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+        </div>
+        <div id="row-4" class="row">
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+        </div>
+        <div id="row-5" class="row">
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+        </div>
+        <div id="row-6" class="row">
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+        </div>
+        <div id="row-7" class="row">
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+        </div>
+        <div id="row-8" class="row">
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+        </div>
+        <div id="row-9" class="row">
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+        </div>
+        <div id="row-10" class="row">
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+            <p class="a y"></p>
+            <p class="a b"></p>
+            <p class="a g"></p>
+            <p class="a r"></p>
+        </div>
+    </div>
+</body>
+</html>
