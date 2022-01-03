@@ -71,22 +71,30 @@ let speedSlider = document.getElementById('speed');
 let speedP = document.getElementById('speed-amount');
 let speed = speedSlider.value;
 
-const play = () => {
-    if (start.innerHTML == 'start') {
-        this.interval = setInterval(loop, speed);
-        speedSlider.onchange = () => {
-            speed = speedSlider.value;
-            speedP.innerHTML = `${speedSlider.value}ms between notes`;
-        
-            if(this.interval) {
-                clearInterval(this.interval);
-                this.interval = setInterval(loop, speed);
-            }
-        }
-        start.innerHTML = 'pause';
+const toggleStart = (button) => {
+    if (button.innerHTML == 'start') {
+        button.innerHTML = 'pause';
     } else {
-        start.innerHTML = 'start';
+        button.innerHTML = 'start';
+    }
+}
+
+const play = () => {
+    toggleStart(start);
+    if (start.innerHTML == 'pause') {
+        this.interval = setInterval(loop, speed);
+    } else {
         clearInterval(this.interval);
+    }
+
+    speedSlider.onchange = () => {
+        speed = speedSlider.value;
+        speedP.innerHTML = `${speedSlider.value}ms between notes`;
+        clearInterval(this.interval);
+    
+        if (start.innerHTML == 'pause') {
+            this.interval = setInterval(loop, speed);
+        }
     }
 }
 
