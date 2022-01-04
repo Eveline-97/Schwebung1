@@ -107,8 +107,8 @@ start.addEventListener('click', play);
 let title = document.getElementById('title');
 
 for (let i = 0; i < 9; i++) {
-    let deg = Math.random()*30-15;
-    let seconds = Math.random()*4 + 1;
+    let deg = Math.random() * 30 - 15;
+    let seconds = Math.random() * 4 + 1; //1-5 seconds
     Keyframes.define([
         {
             name: `schwebung${i}`,
@@ -117,7 +117,7 @@ for (let i = 0; i < 9; i++) {
             '75%': {transform: `rotate(${deg}deg)`},
             '100%': {transform: `rotate(0deg)`}
         }
-    ])
+    ]);
     let letter = new Keyframes(document.getElementById(`letter${i}`));
-    letter.play(`schwebung${i} ${seconds}s ease-in-out infinite`);
+    letter.play(`schwebung${i} ${seconds}s linear infinite`);
 }
