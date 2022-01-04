@@ -1,5 +1,6 @@
 let aList = document.getElementsByClassName('a');
 let current = 0;
+let row = 0;
 let repeat = 1;
 
 //init synths
@@ -38,6 +39,20 @@ console.log(
 );*/
 
 const loop = () => {
+    //next note
+    if (current == aList.length-1) {
+        current = 0;
+        row = 0;
+        repeat++;
+    } else {
+        current++;
+    }
+
+    if (current % 10 == 0 && current != 0) {
+        row++;
+    }
+
+    //loop
     for (let i = 0; i < aList.length; i++) {
         let a = aList[i];
 
@@ -84,19 +99,13 @@ const loop = () => {
         }
     }
 
-    //next note
-    if (current == aList.length-1) {
-        current = 0;
-        repeat++;
-    } else {
-        current++;
-    }
-
     //logs
     let currentNote = document.getElementById("current-note");
     let repeatP = document.getElementById("repeats");
-    currentNote.innerHTML = `Current note: ${current}`;
+    let rowP = document.getElementById('current-row');
+    currentNote.innerHTML = `Current note: ${current + 1}`;
     repeatP.innerHTML = `Repeats: ${repeat - 1}`;
+    rowP.innerHTML = `Row: ${row + 1}`;
 }
 
 let speedSlider = document.getElementById('speed');
