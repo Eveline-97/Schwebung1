@@ -87,10 +87,13 @@ a:hover {
 #controls {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
 }
 button {
     font-family: 'Amatic SC';
     width: 40px;
+    margin-left: 4px;
 }
 button:hover {
     cursor: pointer;

@@ -153,3 +153,53 @@ for (let i = 0; i < 9; i++) {
     let letter = new Keyframes(document.getElementById(`letter${i}`));
     letter.play(`schwebung${i} ${seconds}s linear infinite`);
 }
+
+/***-ROWS-***/
+let rows = document.getElementsByClassName('row');
+let rowAmount = document.getElementById('row-amount');
+let add = document.getElementById('add-row');
+let remove = document.getElementById('remove-row');
+
+const addRow = () => {
+    let lastRow = document.getElementById(`row-${rows.length}`);
+    //create new row
+    let el = document.createElement('div');
+    el.id = `row-${rows.length+1}`;
+    el.classList.add('row');
+
+    //children of the last row that are to become the children of the new element
+    children = [
+        lastRow.children[1],
+        lastRow.children[2],
+        lastRow.children[3],
+        lastRow.children[4],
+        lastRow.children[5],
+        lastRow.children[6],
+        lastRow.children[7],
+        lastRow.children[8],
+        lastRow.children[9],
+        lastRow.children[2]
+    ];
+
+    //loop over children and add to element
+    for (let i = 0; i < children.length; i++) {
+        let child = document.createElement('p');
+        child.classList = children[i].classList;
+        el.appendChild(child);
+    }
+    lastRow.insertAdjacentElement('afterend', el);
+
+    //update amount of rows
+    rowAmount.innerHTML = `Rows: ${rows.length}`;
+}
+
+const removeRow = () => {
+    let lastRow = document.getElementById(`row-${rows.length}`);
+    lastRow.remove();
+
+    //update amount of rows
+    rowAmount.innerHTML = `Rows: ${rows.length}`;
+}
+
+add.addEventListener('click', addRow);
+remove.addEventListener('click', removeRow);
