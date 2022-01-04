@@ -101,3 +101,23 @@ const play = () => {
 //start
 Tone.start();
 start.addEventListener('click', play);
+
+/***-TITLE-***/
+/*with keyframes.js*/
+let title = document.getElementById('title');
+
+for (let i = 0; i < 9; i++) {
+    let deg = Math.random()*30-15;
+    let seconds = Math.random()*4 + 1;
+    Keyframes.define([
+        {
+            name: `schwebung${i}`,
+            '0%': {transform: `rotate(0deg)`},
+            '25%': {transform: `rotate(-${deg}deg)`},
+            '75%': {transform: `rotate(${deg}deg)`},
+            '100%': {transform: `rotate(0deg)`}
+        }
+    ])
+    let letter = new Keyframes(document.getElementById(`letter${i}`));
+    letter.play(`schwebung${i} ${seconds}s ease-in-out infinite`);
+}
