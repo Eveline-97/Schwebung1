@@ -2,8 +2,40 @@ let aList = document.getElementsByClassName('a');
 let current = 0;
 let repeat = 1;
 
-//init synth
+//init synths
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+/*const synthG = new Tone.PolySynth(Tone.Synth).toDestination();
+const synthR = new Tone.PolySynth(Tone.Synth).toDestination();
+const synthY = new Tone.PolySynth(Tone.Synth).toDestination();*/
+
+/*synth.options = {
+    envelope: {
+        attack: 0.01,
+        decay: 0.01,
+        release: 0.5,
+        sustain: 0.4
+    },
+    oscillator: {
+        partialCount: 10,
+        partials: 5
+    }
+}
+synthG.options.envelope = {
+    attack: 0.02,
+    decay: 0.5,
+    release: 0.5
+}
+synthR.options.envelope = {
+    attack: 0.001,
+    decay: 0.1,
+    release: 0.5
+}
+console.log(
+    synth.options,
+    synthG.options.envelope,
+    synthR.options.envelope,
+    synthY.options.envelope
+);*/
 
 const loop = () => {
     for (let i = 0; i < aList.length; i++) {
