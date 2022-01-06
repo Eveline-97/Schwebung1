@@ -205,7 +205,12 @@ const addRow = () => {
 const removeRow = () => {
     let lastRow = document.getElementById(`row-${rows.length}`);
     if (rows.length > 1) {
-        lastRow.remove();
+        if (rows.length == row + 1) {
+            alert(`The row is currently playing and can not be removed.`);
+            return;
+        } else {
+            lastRow.remove();
+        }
     } else {
         alert(`The first row can not be removed.`);
         return;
