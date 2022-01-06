@@ -204,7 +204,12 @@ const addRow = () => {
 
 const removeRow = () => {
     let lastRow = document.getElementById(`row-${rows.length}`);
-    lastRow.remove();
+    if (rows.length > 1) {
+        lastRow.remove();
+    } else {
+        alert(`The first row can not be removed.`);
+        return;
+    }
 
     //update amount of rows
     rowAmount.innerHTML = `Rows: ${rows.length}`;
