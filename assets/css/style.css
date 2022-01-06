@@ -1,6 +1,8 @@
 /*GENERAL*/
 html {
     background-color: black;
+    background-color: rgb(240, 165, 180);
+    letter-spacing: 0.1em;
 }
 
 /*NOTES*/
@@ -38,7 +40,8 @@ html {
 
 /***HEADER***/
 header {
-    background-color: rgb(255, 174, 188);
+    /*background-color: rgb(255, 174, 188);*/
+    color: black;
     font-family: 'Amatic SC';
     margin: 0em 1.5em;
     padding: 0.3em;
@@ -67,7 +70,7 @@ a:hover {
     justify-content: space-around;
 }
 #title > span {
-    color: white;
+    color: black;
     padding: 1px;
 }
 
@@ -75,11 +78,13 @@ a:hover {
 #scheme {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
     justify-content: space-between;
-    margin: 0em 1.5em 2em 1.5em;
-    padding: 1em;
+    margin: 0em 1.2em 1.5em 1.2em;
+    padding: 0.5em;
+    font-size: 1.2em;
     color: black;
-    background-color: rgb(180, 248, 200);
+    /*background-color: rgb(180, 248, 200);*/
     font-family: 'Amatic SC';
 }
 
@@ -90,6 +95,11 @@ a:hover {
     align-items: center;
     justify-content: space-around;
 }
+#controls > p,
+#controls > button {
+    padding: 0.4em;
+}
+
 button {
     font-family: 'Amatic SC';
     width: 40px;
