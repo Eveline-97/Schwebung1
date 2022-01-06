@@ -74,22 +74,22 @@ const loop = () => {
             if (a.classList.contains('b')) {
                 a.classList.remove('b');
                 a.classList.add('g');
-                synth.triggerAttackRelease(400+top*repeat, .01*repeat, now);
+                synth.triggerAttackRelease(400+top*repeat/2, .01*repeat*2, now);
             }
             else if (a.classList.contains('g')) {
                 a.classList.remove('g');
                 a.classList.add('r');
-                synth.triggerAttackRelease(500-top*repeat, .01*repeat, now);
+                synth.triggerAttackRelease(500-top*repeat/2, .01*repeat*2, now);
             }
             else if (a.classList.contains('r')) {
                 a.classList.remove('r');
                 a.classList.add('y');
-                synth.triggerAttackRelease(600-top*repeat, .01*repeat, now);
+                synth.triggerAttackRelease(600-top*repeat/2, .01*repeat*2, now);
             }
             else if (a.classList.contains('y')) {
                 a.classList.remove('y');
                 a.classList.add('b');
-                synth.triggerAttackRelease(300+top*repeat, .01*repeat, now);
+                synth.triggerAttackRelease(300+top*repeat/2, .01*repeat*2, now);
             }
         }
         else {
