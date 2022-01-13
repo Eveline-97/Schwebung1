@@ -74,22 +74,22 @@ const loop = () => {
             if (a.classList.contains('b')) {
                 a.classList.remove('b');
                 a.classList.add('g');
-                synth.triggerAttackRelease(400+top*repeat/2, .01*repeat*2, now);
+                synth.triggerAttackRelease(400+top*repeat/2., .01*repeat*2, now);
             }
             else if (a.classList.contains('g')) {
                 a.classList.remove('g');
                 a.classList.add('r');
-                synth.triggerAttackRelease(500-top*repeat/2, .01*repeat*2, now);
+                synth.triggerAttackRelease(500-top*repeat/2., .01*repeat*2, now);
             }
             else if (a.classList.contains('r')) {
                 a.classList.remove('r');
                 a.classList.add('y');
-                synth.triggerAttackRelease(600-top*repeat/2, .01*repeat*2, now);
+                synth.triggerAttackRelease(600-top*repeat/2., .01*repeat*2, now);
             }
             else if (a.classList.contains('y')) {
                 a.classList.remove('y');
                 a.classList.add('b');
-                synth.triggerAttackRelease(300+top*repeat/2, .01*repeat*2, now);
+                synth.triggerAttackRelease(300+top*repeat/2., .01*repeat*2, now);
             }
         }
         else {
@@ -145,9 +145,9 @@ start.addEventListener('click', play);
 
 /***-TITLE-***/
 /*with keyframes.js*/
-let title = document.getElementById('title');
+let titleChildren = document.getElementById('title').children;
 
-for (let i = 0; i < 9; i++) {
+for (let i = 0; i < titleChildren.length; i++) {
     let deg = Math.random() * 30 - 15;
     let seconds = Math.random() * 4 + 1; //1-5 seconds
     Keyframes.define([
